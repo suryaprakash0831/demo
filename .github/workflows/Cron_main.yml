@@ -1,0 +1,13 @@
+name: Run Every 1 Minutes
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"   # Runs every 1 minutes
+  workflow_dispatch:         # Optional: allow manual trigger
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print timestamp
+        run: echo "Workflow executed at: $(date)"
